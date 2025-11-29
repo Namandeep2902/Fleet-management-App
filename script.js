@@ -14,18 +14,15 @@ let fleet = [];
 function addVehicle()
 {
     let reg = document.getElementById("reg").value;
-    let type = document.getElementById("vehicleType").value;
-    let driver = document.getElementById("driverName").value;
-    let available = document.getElementById("available").value;
+    let category = document.getElementById("category").value;
+    let driver = document.getElementById("driver").value;
+    let status = document.getElementById("available").value;
     if(reg === ""|| driver === "")
     {
         alert("Please fill all the required fields");
         return;
     }
-    let vehicle = {
-        reg,type,driver,available
-    };
-    fleet.push(vehicle);
+    fleet.push({reg,category,driver,status});
     displayVehicles();
     }
     function displayVehicles()
@@ -35,11 +32,11 @@ function addVehicle()
         fleet.forEach((vehicle,index) =>
         {
             let card = document.createElement("div");
-            card.className ="card";
-            card.innerHTML =`
-            <h3>${vehicle.type} - ${vehicle.reg}</h3>
+            div.className ="card";
+            div.innerHTML =`
+            <h3>${vehicle.category} - ${vehicle.reg}</h3>
             <p><b>Driver:</b> ${vehicle.driver}</p>
-              <p><b>Status:</b> ${vehicle.available ? "Available":"Unavailable"}</p>
+              <p><b>Status:</b> ${vehicle.status}</p>
               <button onclick ="updateDriver(${index})">Update Driver</button>
               <button onclick ="toggleAvailabiltiy(${index})">Change Status</button>
               <button onclick="deleteVehicle(${index})"">Delete</button>`;
