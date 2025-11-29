@@ -2,24 +2,37 @@
 <html lang="en">
     <head>
         <title>Admin Dashboard</title>
-        
+        <style>
+            #fleetContainer{
+                display:grid;
+                grid-template-columns:repeat(3,1fr);
+                gap:15px;
+            }
+            .card{
+                border: 1px solid black;
+                padding:10px;
+            }
+            </style>
         </head>
         <body>
             <h2>FLEET MANAGEMENT APP</h2>
             <h3>Add Vehicle</h3>
-            <input id="vehicleName"placeholder="Enter Vehicle Name"><br>
+            <input id="reg"placeholder="Reg No."><br>
              <select id="vehicleType">
              <option value="Car">Car</option>
              <option value="Auto">Auto</option>
              <option value="Bus">Bus</option>
              <option value="Truck">Truck</option>
-             </select><br>
-             <input id="driverName"placeholder="Enter Driver Name"><br>
+             </select><br><br>
+             <input id="driverName"placeholder="Enter Driver Name"><br><br>
              <label>
-                <input type="checkbox" id="Available"></label><br>
+                <select id="Available">
+                    <option value="Available">Available</option>
+                    <option value="Unavailable">Unavailable</option></select>
+                </label><br><br>
                 <button onclick="addVehicle()">Add Vehicle</button>
                 <h3>Vehicle List</h3>
-                <div id="fleetContainer"style="display:grid;grid-template-columns:repeat(3,1fr); gap:10px"></div>
+                <div id="fleetContainer"></div>
                 <script src="script.js"></script>
                 </body>
 </html>

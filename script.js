@@ -16,7 +16,7 @@ function addVehicle()
     let reg = document.getElementById("reg").value;
     let type = document.getElementById("vehicleType").value;
     let driver = document.getElementById("driverName").value;
-    let available = document.getElementById("available").checked;
+    let available = document.getElementById("available").value;
     if(reg === ""|| driver === "")
     {
         alert("Please fill all the required fields");
