@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Admin Dashboard</title>
+        </head>
+        <body>
+            <h2>FLEET MANAGEMENT APP</h2>
+            <h3>Add Vehicle</h3>
+            <input id="vehicleName"placeholder="Enter Vehicle Name"><br>
+             <select id="vehicleType">
+             <option value="Car">Car</option>
+             <option value="Auto">Auto</option>
+             <option value="Bus">Bus</option>
+             <option value="Truck">Truck</option>
+             </select><br>
+             <input id="driverName"placeholder="Enter Driver Name"><br>
+             <label>
+                <input type="checkbox" id="Available"></label><br>
+                <button onclick="addVehicle()">Add Vehicle</button>
+                <h3>Vehicle List</h3>
+                <div id="fleetContainer"style="display:grid;grid-template-columns:repeat(3,1fr); gap:10px"></div>
+                <script src="script.js"></script>
+                </body>
+</html>
