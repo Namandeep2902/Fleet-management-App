@@ -38,7 +38,7 @@ function addVehicle()
             <p><b>Driver:</b> ${vehicle.driver}</p>
               <p><b>Status:</b> ${vehicle.status}</p>
               <button onclick ="updateDriver(${index})">Update Driver</button>
-              <button onclick ="toggleAvailabiltiy(${index})">Change Status</button>
+              <button onclick ="toggle(${index})">Change Status</button>
               <button onclick="deleteVehicle(${index})"">Delete</button>`;
               Container.appendChild(card);
         });
