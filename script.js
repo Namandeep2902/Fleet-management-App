@@ -3,7 +3,7 @@ function login(){
     let password = document.getElementById("password").value;
     if (email === "admin@gmail.com" && password === "admin123")
     {
-        window.location.href="dashboard.html";
+        window.location.href="admin.html";
     }
     else
     {
@@ -13,17 +13,17 @@ function login(){
 let fleet = [];
 function addVehicle()
 {
-    let name = document.getElementById("vehicleName").value;
+    let reg = document.getElementById("reg").value;
     let type = document.getElementById("vehicleType").value;
     let driver = document.getElementById("driverName").value;
     let available = document.getElementById("available").checked;
-    if(name === ""|| driver === "")
+    if(reg === ""|| driver === "")
     {
         alert("Please fill all the required fields");
         return;
     }
     let vehicle = {
-        name,type,driver,available:available
+        reg,type,driver,available
     };
     fleet.push(vehicle);
     displayVehicles();
@@ -35,10 +35,9 @@ function addVehicle()
         fleet.forEach((vehicle,index) =>
         {
             let card = document.createElement("div");
-            card.style.padding ="10px";
-            card.style.border ="1px solid black";
+            card.className ="card";
             card.innerHTML =`
-            <h3>${vehicle.name} - ${vehicle.type}</h3>
+            <h3>${vehicle.type} - ${vehicle.reg}</h3>
             <p><b>Driver:</b> ${vehicle.driver}</p>
               <p><b>Status:</b> ${vehicle.available ? "Available":"Unavailable"}</p>
               <button onclick ="updateDriver(${index})">Update Driver</button>
